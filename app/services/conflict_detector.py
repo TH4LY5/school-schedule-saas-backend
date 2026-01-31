@@ -1,0 +1,1 @@
+# Detecta e explica restrições impeditivas

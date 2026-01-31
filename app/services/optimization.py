@@ -1,0 +1,1 @@
+# Minimiza janelas vagas, otimiza dias

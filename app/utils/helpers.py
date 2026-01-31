@@ -1,0 +1,1 @@
+# Funções comuns (tempo, validações)
