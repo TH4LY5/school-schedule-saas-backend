@@ -1,6 +1,6 @@
 from pydantic_settings import BaseSettings
 from typing import Optional
-
+import os
 
 class Settings(BaseSettings):
     PROJECT_NAME: str = "School Schedule SaaS"
@@ -8,10 +8,10 @@ class Settings(BaseSettings):
     SECRET_KEY: str = "sua_chave_secreta_super_segura_aqui"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 8  # 8 dias
 
-    POSTGRES_SERVER: str = "pg-6daef31-thalyscosta99-3976.g.aivencloud.com:22596"
-    POSTGRES_USER: str = "avnadmin"
-    POSTGRES_PASSWORD: str = "AVNS_KTAIkZVA62TwfZ7S0vV"
-    POSTGRES_DB: str = "defaultdb"
+    POSTGRES_SERVER: str = os.getenv("POSTGRES_SERVER", "default_value")
+    POSTGRES_USER: str = os.getenv("POSTGRES_USER", "default_value")
+    POSTGRES_PASSWORD: str = os.getenv("POSTGRES_PASSWORD", "default_value")
+    POSTGRES_DB: str = os.getenv("POSTGRES_DB", "default_value")
     DATABASE_URL: Optional[str] = None
 
     @property
